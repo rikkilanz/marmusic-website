@@ -1,10 +1,11 @@
 @use "config/reset";
 @import url("https://fonts.googleapis.com/css2?family=Parisienne&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&display=swap");
 
 body {
-    font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
+  background-image: url("/images/wall.jpg");
 }
 
 a {
@@ -16,10 +17,12 @@ a {
   align-items: center;
   justify-content: space-between;
   padding: 2rem 4rem;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
+  background-image: url("/images/ground.jpg");
+  z-index: 9;
   .main-nav {
     .nav-links {
       display: flex;
@@ -41,23 +44,57 @@ a {
   justify-content: center;
   height: 100vh;
   width: 100vw;
-  background-image: url('/images/white-wall.jpeg');
-  background-size: cover;
   .heading-blurb {
+    width: 100%;
     font-family: "EB Garamond", serif;
     display: flex;
     flex-direction: column;
-    font-size: 3rem;
+    font-size: 2rem;
     font-style: italic;
     letter-spacing: 4px;
     gap: 0.5rem;
-    color: #121212;
+    color: #ffffff;
+    z-index: 1;
     :nth-child(2) {
       text-transform: uppercase;
+    }
+    transform: translateY(-100px);
+  }
+  .heading-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    img {
+      width: 100%;
+      max-width: 500px;
+      min-width: 350px;
     }
   }
 }
 
+.spotify-player {
+  position: fixed;
+  right: 30px;
+  bottom: 20px;
+  z-index: 9;
+  width: 100%;
+  max-width: 500px;
+  min-width: 350px;
+  padding: 0px 32px;
+}
+
 .heading-main {
   font-family: "Parisienne", cursive;
+}
+
+@media only screen and (max-width: 768px) {
+  .spotify-player {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+    z-index: 1;
+    padding-bottom: 300px;
+  }
 }
