@@ -143,6 +143,9 @@ a {
 }
 
 @media only screen and (max-width: 768px) {
+  .main-header {
+    justify-content: center;
+  }
   .spotify-player {
     position: relative;
     top: 0;
